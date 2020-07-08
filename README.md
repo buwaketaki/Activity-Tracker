@@ -8,5 +8,5 @@ The app can be used to keep recod of the activites of different employees in an 
 Download or clone the repository and run command: ```npm run dev``` in a node environment.
   
 ## Tools
-- It uses Nodejs framework Expressjs as backend and Reactjs as frontend of the application. 
+- It uses Nodejs (Expressjs) as backend and Reactjs as frontend of the application. 
 - It uses react-big-calendar to display the calendar and events.
