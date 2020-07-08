@@ -1,0 +1,91 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+.listitems {
+  text-align: center;
+  color: black;
+
+  box-shadow: 8px 8px 15px rgb(176, 177, 175);
+  border: darkblue;
+}
+/* s */
+
+.navbar {
+  background-color:#1565C0;
+  box-shadow: 5px 5px 10px #90a4ae;
+}
+.listitems {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  text-align: center;
+  color: black;
+font-family: 'Verdana' ;
+  box-shadow: 8px 8px 15px rgb(183, 196, 196);
+  border: rgb(25, 25, 88);
+ 
+}
+.listitems:hover{
+  background-color: rgb(228, 231, 231);
+}
+.listTitle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  font-family:"Algerian";
+}
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.CalendarTitle{
+  display: flex;
+  flex-direction : "row";
+  justify-content:space-between;
+  align-items: center;
+  margin-top: 20px;
+  font-family:"Algerian";
+  margin-bottom: 30px;
+}
+
+.CalendarTemplate{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+
+ 
+}
