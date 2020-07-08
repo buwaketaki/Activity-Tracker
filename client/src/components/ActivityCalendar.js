@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { MDBBtn, MDBIcon } from "mdbreact";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import { UserDataContext } from "../context/UserDataContext";
 import ReactLoading from "react-loading";
 const localizer = momentLocalizer(moment);
@@ -26,31 +26,34 @@ const ActivityCalendar = (props) => {
     history.goBack();
   };
 
-  // if (props.location.state === undefined) {
-  //   return (
-  //     <div
-  //       style={{
-  //         textAlign: "center",
-  //         fontSize: "24px",
-  //         fontWeight: 700,
-  //       }}
-  //     >
-  //       <div>You need to choose a User to get the details</div>
-  //     </div>
-  //   );
-  // }
-
   return (
     <div>
       {error == true ? (
-        <h1>Member not found</h1>
+        <div style={{ textAlign: "center", marginTop : "20px" }}>
+          <h1>
+            Member not found... <MDBIcon icon="frown" />
+          </h1>
+          <Link to="/">
+                  <span
+                    style={{
+                      backgroundColor: "#1565c0",
+                      color: "white",
+                      fontWeight: 700,
+                      width: "100px",
+                      padding: "10px",
+                      borderRadius: "10px",
+                    }}
+                  >
+                    <MDBIcon icon="home" /> Home
+                  </span>
+                </Link>
+        </div>
       ) : Loading == true || event.length == 0 ? (
         <ReactLoading
-        type="bars"
-        color="blue"
-        height={300}
-        width={300}
-      />
+          type="spin"
+          color="blue"
+          style={{ margin: "20px auto", height: "80px", width: "80px" }}
+        />
       ) : (
         <div>
           <h3 className="CalendarTitle">

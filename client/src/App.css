@@ -15,14 +15,13 @@
 .listitems {
   text-align: center;
   color: black;
-
   box-shadow: 8px 8px 15px rgb(176, 177, 175);
   border: darkblue;
 }
 /* s */
 
 .navbar {
-  background-color:#1565C0;
+  background-color: #1565c0;
   box-shadow: 5px 5px 10px #90a4ae;
 }
 .listitems {
@@ -32,20 +31,19 @@
   width: 90%;
   text-align: center;
   color: black;
-font-family: 'Verdana' ;
+  font-family: "Verdana";
   box-shadow: 8px 8px 15px rgb(183, 196, 196);
   border: rgb(25, 25, 88);
- 
 }
-.listitems:hover{
+.listitems:hover {
   background-color: rgb(228, 231, 231);
 }
-.listTitle{
+.listTitle {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-  font-family:"Algerian";
+  font-family: "Algerian";
 }
 .App-header {
   background-color: #282c34;
@@ -71,21 +69,19 @@ font-family: 'Verdana' ;
   }
 }
 
-.CalendarTitle{
+.CalendarTitle {
   display: flex;
-  flex-direction : "row";
-  justify-content:space-between;
+  flex-direction: "row";
+  justify-content: space-between;
   align-items: center;
   margin-top: 20px;
-  font-family:"Algerian";
+  font-family: "Algerian";
   margin-bottom: 30px;
 }
 
-.CalendarTemplate{
+.CalendarTemplate {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 10px;
-
- 
 }

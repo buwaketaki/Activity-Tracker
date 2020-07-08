@@ -2,12 +2,7 @@ import React from "react";
 import {
   MDBListGroupItem,
   MDBListGroup,
-  MDBBadge,
-  MDBCol,
-  MDBRow,
-  MDBContainer,
   MDBBtn,
-  MDBInput,
   MDBIcon,
   MDBModalHeader,
   MDBModalBody,
@@ -15,34 +10,35 @@ import {
   MDBModalFooter,
 } from "mdbreact";
 import moment from "moment-timezone";
-import ActivityCalendar from "../ActivityCalendar";
 import { Link } from "react-router-dom";
-import { useState, useContext, useEffect, createContext } from "react";
+import { useState } from "react";
+
 const ListItem = ({ item }) => {
   const [modal, setmodal] = useState(false);
-  const [Calendar, setCalendar] = useState(false);
 
   const toggle = () => {
     setmodal(!modal);
   };
-  const viewCalendar = () => {
-    setCalendar(!Calendar);
-    setmodal(false);
-  };
+
   return (
-    <div style={{
-      display : "flex",
-      justifyContent : "center",
-      alignItems : "center",
-      flexDirection : "column",
-      width : "100%"
-  }}>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
+        width: "100%",
+      }}
+    >
       <MDBListGroup className="list" style={{ width: "80%" }}>
         <MDBListGroupItem
           className="d-flex justify-content-between align-items-center mt-10 listitems "
           style={{ marginTop: "10px" }}
         >
-          <strong><MDBIcon icon="dot-circle" style={{marginRight:"10px"}}/>{item.real_name}</strong>
+          <strong>
+            <MDBIcon icon="dot-circle" style={{ marginRight: "10px" }} />
+            {item.real_name}
+          </strong>
           <div>
             <MDBBtn size="sm" color="blue" onClick={toggle} rounded>
               Details
@@ -52,22 +48,28 @@ const ListItem = ({ item }) => {
 
               <MDBModalBody>
                 {item.activity_periods.map((time) => (
-                  <div style={{
-                    display: "flex",
-                    flexDirection : "row",
-                    justifyContent : "space-between",
-                    marginBottom : "10px",
-                    borderBottom : "0.8px solid grey",
-                  }}>
-                    <div style={{
-                      fontWeight : 500
-                    }}>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      justifyContent: "space-between",
+                      marginBottom: "10px",
+                      borderBottom: "0.8px solid grey",
+                    }}
+                  >
+                    <div
+                      style={{
+                        fontWeight: 500,
+                      }}
+                    >
                       {moment(time.start_time, "MMM DD YYYY hh:mm A")
                         .tz(item.tz)
                         .format("MMM DD YYYY")}{" "}
                     </div>
-                    <div style={{marginBottom:"10px"}} >
-                      <div><h6>Activity Periods</h6></div>
+                    <div style={{ marginBottom: "10px" }}>
+                      <div>
+                        <h6>Activity Periods</h6>
+                      </div>
                       <div>
                         {moment(time.start_time, "MMM DD YYYY hh:mm A")
                           .tz(item.tz)
@@ -87,10 +89,11 @@ const ListItem = ({ item }) => {
                     pathname: `/calendar/${item.id}`,
                     state: {
                       item: item,
-                      
                     },
                   }}
                 >
+                  {" "}
+                  <MDBIcon icon="calendar-alt" style={{ marginRight: "10px" }} />
                   Calendar
                 </Link>
               </MDBModalFooter>

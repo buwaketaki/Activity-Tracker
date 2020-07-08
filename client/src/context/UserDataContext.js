@@ -10,7 +10,7 @@ const UserDataContextProvider = (props) => {
   const [MemberName, setMemberName] = useState("");
   const [error, seterror] = useState(false);
   const [event, setevent] = useState([]);
-
+  // Fetch all users from backend.
   const getUsers = async () => {
     setLoading(true);
     try {
@@ -21,17 +21,19 @@ const UserDataContextProvider = (props) => {
       setLoading(false);
     } catch (err) {}
   };
+
+  // Fetch user with particular 'id' from backend
   const getUsersById = async (itemId) => {
     seterror(false);
     setLoading(true);
     try {
       const member = await axios.get(`/api/user/${itemId}`);
-      console.log(member);
+
       if (member.status == 200) {
         setMemberName(member.data[0].real_name);
-        console.log(MemberName);
+
         let list = member.data[0].activity_periods;
-        console.log(list);
+
         if (list.length != 0) {
           const l = [];
           list.map((slot) => {
@@ -40,29 +42,22 @@ const UserDataContextProvider = (props) => {
               start: new Date(slot.start_time),
               end: new Date(slot.end_time),
             };
-  
+
             l.push(timeslot);
             setevent(l);
-            console.log(event);
+
             setLoading(false);
           });
         }
       } else {
         seterror(true);
         setLoading(false);
-        console.log("Error set")
       }
-  
     } catch (error) {
-      console.log(error);
       seterror(true);
       setLoading(false);
-      console.log("Error set")
-
     }
-
   };
-  // }
 
   return (
     <div>

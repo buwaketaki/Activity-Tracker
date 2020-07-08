@@ -22,9 +22,7 @@ import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  
   const [isOpen, setIsOpen] = useState(false);
-  
 
   const toggleCollapse = () => {
     if (isOpen == false) {
@@ -34,26 +32,24 @@ const Navbar = () => {
     }
   };
 
-  
-
   return (
-   
-    <MDBNavbar  className="navbar"  dark expand="md">
-    <MDBNavbarBrand>
-      <strong className="white-text"> <MDBIcon
-                icon="calendar-alt"
-                color="white"
-                style={{ marginRight: "10px", marginLeft: "10px" }}
-              />Activity Tracker</strong>
-    </MDBNavbarBrand>
-    <MDBNavbarToggler onClick={toggleCollapse} />
-    <MDBCollapse id="navbarCollapse3" isOpen={isOpen} navbar>
-      
-      <MDBNavbarNav right>
-      
-      </MDBNavbarNav>
-    </MDBCollapse>
-  </MDBNavbar>
+    <MDBNavbar className="navbar" dark expand="md">
+      <MDBNavbarBrand>
+        <strong className="white-text">
+          {" "}
+          <MDBIcon
+            icon="calendar-alt"
+            color="white"
+            style={{ marginRight: "10px", marginLeft: "10px" }}
+          />
+          Activity Tracker
+        </strong>
+      </MDBNavbarBrand>
+      <MDBNavbarToggler onClick={toggleCollapse} />
+      <MDBCollapse id="navbarCollapse3" isOpen={isOpen} navbar>
+        <MDBNavbarNav right></MDBNavbarNav>
+      </MDBCollapse>
+    </MDBNavbar>
   );
 };
 export default Navbar;
