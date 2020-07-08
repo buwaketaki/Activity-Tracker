@@ -1,7 +1,6 @@
 const express = require('express')
 const app = express();
 const path = require('path')
-app.get('/',(req, res)=>res.send("hii"));
 app.use('/api/user', require('./routes/user'));
 if(process.env.NODE_ENV ==='production'){
     app.use(express.static('client/build'));
